@@ -1,0 +1,29 @@
+{% extends 'api/base.html' %}
+{% load static %}
+{% block title %}
+Analytics
+{% endblock %}
+{% block content %}
+{% if user.is_superuser %}
+<div class="back">
+<h1>Welcome to Analytics</h1>
+<div class="posts">
+{% for user in userPosts %}
+<!-- show users information and number of post | only superusers can access -->
+
+    <div class="msg">
+        <div class="row">
+            <div class="coln">
+                <img src="{% static 'images/usericon.png' %}" id="userimg"/>
+                            <span> {{ user.username }} </span>
+                        </div>
+            <div class="coln">
+                <p> <b> Number of posts: </b> {{ user.total_posts }} </p>
+            </div>
+        </div>
+
+{% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

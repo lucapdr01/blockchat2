@@ -1,0 +1,23 @@
+{% extends 'api/base.html' %}
+{% load static %}
+    {% block content %}
+<div class="back">
+    <h1>Welcome to User Id</h1>
+
+    <div class="posts">
+    <div class="msg">
+        <div class="row">
+            <div class="coln">
+                <img src="{% static 'images/usericon.png' %}" id="userimg"/>
+                            <span> {{ user.username }} </span>
+                        </div>
+            <div class="coln">
+                <p> <b> First name: </b> {{ user.first_name }}</p>
+                <p> <b> Last name: </b> {{ user.last_name }}</p>
+                <p> <b> Number of posts: </b> {{ userPosts }} </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
